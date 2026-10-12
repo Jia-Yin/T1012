@@ -1,0 +1,144 @@
+/* ── Reset & base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Design tokens — wabi-sabi palette ── */
+:root {
+  --bg:        #f0ebe2;
+  --surface:   #e8e1d6;
+  --border:    #c8bfb0;
+  --text:      #3b342c;
+  --muted:     #7a6f63;
+  --accent:    #8a7157;
+
+  --font-serif: Georgia, "Times New Roman", serif;
+  --font-sans:  "Helvetica Neue", Arial, sans-serif;
+
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --space-lg: 3.5rem;
+}
+
+/* ── Document ── */
+html {
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-md) var(--space-sm);
+}
+
+/* ── Content width ── */
+header, main, footer {
+  width: 100%;
+  max-width: 640px;
+}
+
+/* ── Header ── */
+header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: var(--space-md);
+  margin-bottom: var(--space-md);
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 6vw, 2.6rem);
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: var(--text);
+}
+
+.tagline {
+  margin-top: var(--space-xs);
+  font-size: 0.95rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ── Sections ── */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+section {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: var(--space-md);
+}
+
+section h2 {
+  font-family: var(--font-serif);
+  font-size: 0.78rem;
+  font-weight: normal;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: var(--space-sm);
+}
+
+section p {
+  font-size: 1rem;
+  color: var(--text);
+}
+
+/* ── Lists ── */
+section ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+section ul li {
+  font-size: 1rem;
+  color: var(--text);
+  padding-left: 1.1em;
+  position: relative;
+}
+
+section ul li::before {
+  content: "·";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+/* ── Footer ── */
+footer {
+  margin-top: var(--space-lg);
+  padding-top: var(--space-sm);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+}
+
+/* ── Responsive: narrow screens (≤ 400 px) ── */
+@media (max-width: 400px) {
+  html {
+    font-size: 16px;
+  }
+
+  section {
+    padding: var(--space-sm);
+  }
+}
