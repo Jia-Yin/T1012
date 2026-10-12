@@ -127,6 +127,54 @@ section ul li::before {
   color: var(--accent);
 }
 
+/* ── Projects ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-sm);
+}
+
+.project-card {
+  background-color: var(--bg);
+  border: 1px solid var(--border);
+  padding: 0;
+  overflow: hidden;
+}
+
+.project-img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-bottom: 1px solid var(--border);
+}
+
+.project-info {
+  padding: var(--space-sm);
+}
+
+.project-info h3 {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: normal;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.project-info p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.project-card a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  text-decoration: underline;
+}
 /* ── Per-section colours ── */
 section:nth-of-type(2) {
   background-color: var(--surface-moss);
@@ -161,5 +209,9 @@ footer {
 
   section {
     padding: var(--space-sm);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
   }
 }
