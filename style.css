@@ -7,12 +7,18 @@
 
 /* ── Design tokens — wabi-sabi palette ── */
 :root {
-  --bg:        #f0ebe2;
-  --surface:   #e8e1d6;
-  --border:    #c8bfb0;
-  --text:      #3b342c;
-  --muted:     #7a6f63;
-  --accent:    #8a7157;
+  --bg:           #f0ebe2;   /* warm cream  — Color 1 */
+  --surface:      #e8e1d6;   /* warm beige */
+  --surface-moss: #d8e2d4;   /* muted sage  — Color 2 */
+  --surface-slate:#d4dce5;   /* dusty slate — Color 3 */
+  --border:       #c8bfb0;
+  --border-moss:  #b4c4ae;
+  --border-slate: #b4bece;
+  --text:         #3b342c;
+  --muted:        #7a6f63;
+  --accent:       #8a7157;
+  --accent-moss:  #4e7246;
+  --accent-slate: #486078;
 
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans:  "Helvetica Neue", Arial, sans-serif;
@@ -120,6 +126,21 @@ section ul li::before {
   left: 0;
   color: var(--accent);
 }
+
+/* ── Per-section colours ── */
+section:nth-of-type(2) {
+  background-color: var(--surface-moss);
+  border-color: var(--border-moss);
+}
+section:nth-of-type(2) h2 { color: var(--accent-moss); }
+section:nth-of-type(2) ul li::before { color: var(--accent-moss); }
+
+section:nth-of-type(3) {
+  background-color: var(--surface-slate);
+  border-color: var(--border-slate);
+}
+section:nth-of-type(3) h2 { color: var(--accent-slate); }
+section:nth-of-type(3) ul li::before { color: var(--accent-slate); }
 
 /* ── Footer ── */
 footer {
